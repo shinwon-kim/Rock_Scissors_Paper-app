@@ -43,7 +43,7 @@
     margin-top: 2rem;
 }
 
-.rock, .scissor, .paper {
+.rock, .paper, .scissors {
     padding: 0.8rem;
     width: 100px;
     border-radius: 10px;
@@ -72,8 +72,10 @@
 }
 
 .result {
-    margin-top: 20px;
-    font-size: 1rem;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5439;
 }
 
 @media screen and (max-width: 612px) {
