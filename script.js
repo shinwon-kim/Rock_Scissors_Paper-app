@@ -22,7 +22,42 @@ const playGame = () => {
             
             // Check who wins
             winner(option.innerText, computerChoice)
+
+            // Game over
+            if (moves === 10) {
+                gameOver(playerOptions, movesLeft);
+            }
         })
+    })
+}
+
+const gameOver = (playerOptions, movesLeft) => {
+    const chooseMove = document.querySelector(".move");
+    const result = document.querySelector(".result");
+    const reloadBtn = document.querySelector(".reload");
+
+    playerOptions.forEach(option => {
+        option.style.display = "none"
+    })
+    chooseMove.innerText = "GAME OVER";
+    movesLeft.style.display = "none";
+
+    if(playerScore > computerScore) {
+        result.style.fontSize = "2rem";
+        result.innerText = "You're the winner of the game. 😆"
+    } else if (playerScore < computerScore){
+        result.style.fontSize = "2rem";
+        result.innerText = "You lost the game. 😭"
+    } else {
+        result.style.fontSize = "2rem";
+        result.innerText = "The game ended in a tie. 😏"
+        result.style.color = "#323549";
+    }
+
+    reloadBtn.innerText = "RESTART";
+    reloadBtn.style.display = "flex";
+    reloadBtn.addEventListener("click", () => {
+        window.location.reload();
     })
 }
 
