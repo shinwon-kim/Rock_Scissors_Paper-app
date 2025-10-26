@@ -55,6 +55,11 @@
     text-transform: uppercase
 }
 
+img {
+    width: 100px;
+    height: 150px;
+}
+
 .move {
     font-size: 2rem;
     font-weight: bold;

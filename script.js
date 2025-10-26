@@ -35,6 +35,7 @@ const gameOver = (playerOptions, movesLeft) => {
     const chooseMove = document.querySelector(".move");
     const result = document.querySelector(".result");
     const reloadBtn = document.querySelector(".reload");
+    const img = document.querySelectorAll("img");
 
     playerOptions.forEach(option => {
         option.style.display = "none"
@@ -54,6 +55,7 @@ const gameOver = (playerOptions, movesLeft) => {
         result.style.color = "#323549";
     }
 
+    img.forEach(i => i.style.display ="none");
     reloadBtn.innerText = "RESTART";
     reloadBtn.style.display = "flex";
     reloadBtn.addEventListener("click", () => {
